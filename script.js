@@ -44,24 +44,24 @@ function winningCondition() {
         let b = valuematrix[matrix[1]];
         let c = valuematrix[matrix[2]];
         if (a == "" || b == "" || c == "")
+        {
             continue;
+        }
         if (a == b && b == c) {
-            // console.log(a, b, c);
-            // console.log(valuematrix);
             let msg = playerWon();
             document.getElementsByClassName("game--status")[0].innerHTML = msg;
             gamestatus=false;
             return;
             
         }
-        else {
+    }
             if (!valuematrix.includes("")) {
                 document.getElementsByClassName("game--status")[0].innerHTML = "Match is draw";
                 gamestatus=false;
                 return;
                
-            }
-        }
+            
+        
     }
 }
 document.getElementsByClassName("game--restart")[0].addEventListener("click",restartGame);
